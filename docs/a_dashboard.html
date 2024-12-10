@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KPI</title>
+    <link href="/style.css" rel="stylesheet">
+  </head>
+  <body class="flex min-h-svh" data-theme="wireframe">
+
+    <aside class="h-screen w-72 top-0 overflow-y-auto py-6 px-4 bg-base-200">
+      <a class="btn btn-ghost font-normal">
+        KPI Employee Management
+      </a>
+      <div class="dropdown dropdown-end w-full">
+        <div tabindex="0" role="button" class="btn m-1 w-full">Ψ-Nestor</div>
+        <ul tabindex="0" class="dropdown-content menu bg-base-100 rounded-box z-[1] w-52 p-2 shadow">
+          <li><a>Ψ-Nestor</a></li>
+          <li><a>Θ-Andromeda</a></li>
+          <li><a>Λ-Perseus</a></li>
+          <li><a>Ξ-Cygnus</a></li>
+        </ul>
+      </div>
+      <ul class="menu px-0">
+        <li class="menu-title">Analytics</li>
+        <li>
+          <a href="/a_dashboard.html">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-gauge w-5 h-5"><path d="m12 14 4-4"/><path d="M3.34 19a10 10 0 1 1 17.32 0"/></svg>
+            Dashboard
+          </a>
+        </li>
+        <li class="menu-title">Content</li>
+        <li>
+          <a>
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-file w-5 h-5"><path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z"/><path d="M14 2v4a2 2 0 0 0 2 2h4"/></svg>
+            Assignments
+            <span class="indicator-item badge badge-xs badge-info">New</span>
+          </a>
+        </li>
+        <li>
+          <a href="a_budget.html">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-wallet"><path d="M19 7V4a1 1 0 0 0-1-1H5a2 2 0 0 0 0 4h15a1 1 0 0 1 1 1v4h-3a2 2 0 0 0 0 4h3a1 1 0 0 0 1-1v-2a1 1 0 0 0-1-1"/><path d="M3 5v14a2 2 0 0 0 2 2h15a1 1 0 0 0 1-1v-4"/></svg>
+            Budget
+          </a>
+        </li>
+        <li>
+          <a>
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-japanese-yen"><path d="M12 9.5V21m0-11.5L6 3m6 6.5L18 3"/><path d="M6 15h12"/><path d="M6 11h12"/></svg>
+            Stock values
+          </a>
+        </li>
+
+        <li class="menu-title">Team Management</li>
+        <li>
+          <a href="a_members.html">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-users"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+            Members and Roles
+          </a>
+        </li>
+      </ul>
+    </aside>
+
+<main class="container mx-auto p-4">
+  <!-- Dashboard Header -->
+  <div class="mb-6">
+    <h1 class="text-xl font-bold">Dashboard</h1>
+    <p>Quick overview of your recent activity</p>
+  </div>
+
+  <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+    <!-- New Messages -->
+    <div class="card border rounded-none">
+      <div class="card-body">
+        <h2 class="card-title">New Messages</h2>
+        <p>You have <strong>3</strong> unread messages</p>
+        <a href="/mail.html" class="btn btn-primary btn-sm">View Messages</a>
+      </div>
+    </div>
+
+    <!-- Outstanding Assignments -->
+    <div class="card border rounded-none">
+      <div class="card-body">
+        <h2 class="card-title">Outstanding Assignments</h2>
+        <p><strong>1</strong> assignment is due this week</p>
+        <a href="/assignments.html" class="btn btn-warning btn-sm">Expert Opinion Required</a>
+      </div>
+    </div>
+
+    <!-- Feedback -->
+    <div class="card border rounded-none">
+      <div class="card-body">
+        <h2 class="card-title">Feedback Provided</h2>
+        <p>You are up-to-date with feedback</p>
+        <a href="/feedback.html" class="btn btn-sm">Read Feedback</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Stock Chart Section -->
+  <div class="mt-6 card border rounded-none">
+    <div class="card-body">
+      <h2 class="card-title">
+        Mandatory Awareness of Stock Market Developments
+      </h2>
+      <div class="h-96 rounded-lg flex items-center justify-center">
+        <canvas id="spaceStockChart" class="w-full h-full"></canvas>
+      </div>
+    </div>
+  </div>
+
+<!-- Add Chart.js -->
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<script>
+  const ctx = document.getElementById('spaceStockChart').getContext('2d');
+  const spaceStockChart = new Chart(ctx, {
+    type: 'line',
+    data: {
+      labels: [
+        '00:00', '01:00', '02:00', '03:00', '04:00',
+        '05:00', '06:00', '07:00', '08:00', '09:00',
+        '10:00', '11:00', '12:00', '13:00', '14:00',
+        '15:00', '16:00', '17:00', '18:00', '19:00',
+        '20:00', '21:00', '22:00', '23:00', '24:00', '25:00'
+      ],
+      datasets: [{
+        label: 'XNSE Stock Price (¥)',
+        data: [
+          106.8, 103.1, 108.2, 104.5, 102.3, 107.9, 117.8, 115.4, 113.1, 110.3, 112.7, 121.7, 128.4, 127.6, 125.5, 122.1, 118.6, 119.5, 124.3, 130.2, 132.5, 134.7, 135.6, 137.9, 139.2, 140.5
+        ],
+        borderColor: '#000000',
+        backgroundColor: '#000000',
+        tension: 0.4,
+      },{
+        label: 'APE Stock Price (¥)',
+        data: [
+          106.8, 103.1, 108.2, 104.5, 102.3, 103.9, 119.8, 117.4, 111.1, 111.3, 111.7, 119.7, 126.4, 127.6, 123.5, 121.1, 116.6, 122.5, 127.3, 134.2, 129.5, 132.7, 136.6, 138.9, 139.9, 139.5
+        ],
+        borderColor: '#298636',
+        backgroundColor: '#298636',
+        tension: 0.4,
+      }]
+    },
+    options: {
+      responsive: true,
+      maintainAspectRatio: false,
+      plugins: {
+        legend: {
+          position: 'top',
+        },
+        title: {
+          display: true,
+          text: 'Stock Performance'
+        }
+      },
+      scales: {
+        x: {
+          grid: {
+            display: false,
+          },
+          title: {
+            display: true,
+            text: 'Date',
+            color: '#000000'
+          }
+        },
+        y: {
+          grid: {
+            drawBorder: false,
+          },
+          title: {
+            display: true,
+            text: 'XNSE Stock Price (¥)',
+            color: '#000000'
+          },
+          beginAtZero: false
+        }
+      }
+    }
+  });
+</script>
+</main>
+  </body>
+</html>
+

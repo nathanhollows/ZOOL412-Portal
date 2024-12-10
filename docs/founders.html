@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KPI</title>
+    <link rel="stylesheet" href="https://unpkg.com/terminal.css@0.7.4/dist/terminal.min.css" />
+    <style>
+:root {
+  --global-font-size: 15px;
+  --global-line-height: 0.4em;
+  --global-space: 10px;
+  --font-stack: Menlo, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono, Bitstream Vera Sans Mono, Courier New, monospace, serif;
+  --mono-font-stack: Menlo, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono, Bitstream Vera Sans Mono, Courier New, monospace, serif;
+  --background-color: #7d6310;
+  --page-width: 60em;
+  --font-color: #ffc100;
+  --invert-font-color: #222225;
+  --primary-color: #f0bf25;
+  --secondary-color: #f0bf25;
+  --tertiary-color: #04d9ff;
+  --error-color: #ff3c74;
+  --progress-bar-background: #3f3f44;
+  --progress-bar-fill: #62c4ff;
+  --code-bg-color: #3f3f44;
+  --input-style: solid;
+  --display-h1-decoration: none;
+}
+
+* {
+  font-size: var(--global-font-size);
+  font-color: var(--font-color);
+}
+
+h1, h2 {
+  margin: 0 0 var(--global-line-height);
+  padding: 0;
+  overflow: visible;
+  position: relative;
+  line-height: 1.4em;
+}
+
+a {
+  transition: background-color, color, text-shadow;
+  transition-delay: 0s, 0s, 0s;
+  transition-delay: 70ms;
+}
+a:not(.btn) {
+  text-decoration: underline;
+}
+a:not(.btn):hover {
+  text-shadow: 0 0 2px;
+}
+.btn-primary{
+  box-shadow: 0 0 3px var(--primary-color)
+}
+
+p {
+  margin-left: 1em; /* Indent paragraphs */
+  position: relative; /* Enable pseudo-element positioning */
+}
+
+/* Add the '>' prefix using CSS pseudo-elements */
+p::before {
+    content: "> ";
+    position: absolute;
+    left: -1em; /* Adjust spacing for the '>' */
+}
+body {
+  background-image: radial-gradient(var(--background-color), black 120%);
+  overflow: hidden;
+  width: 100%;
+  height: 100svh;
+  margin: 0;
+  font: 1.3rem Inconsolata, monospace;
+  text-shadow: 0 0 4px;
+  font-color: var(--font-color);
+}
+body::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: repeating-linear-gradient(0deg, rgba(0, 0, 0, 0.15), rgba(0, 0, 0, 0.15) 1px, transparent 1px, transparent 2px);
+  pointer-events: none;
+}
+
+#container {
+  height: 100%;
+  overflow: auto;
+  padding: 2rem;
+}
+
+::selection {
+  background: var(--primary-color);
+  text-shadow: 0 0 1px;
+}
+
+pre {
+  margin: 0;
+}
+
+table{
+  margin: 0 auto;
+  margin-top: var(--global-space);
+  margin-bottom: var(--global-space);
+  box-shadow: 0 0 3px var(--font-color);
+}
+table td, table tr, table th {
+  line-height: 1em;
+  padding: 0.5em;
+}
+table th {
+  background: var(--primary-color);
+  color: var(--invert-font-color);
+  text-shadow: 0 0 2px;
+}
+tr td {
+  transition: background-color, color, text-shadow;
+  transition-delay: 0s, 0s, 0s;
+  transition-delay: 50ms;
+}
+tr:hover td {
+  background-color: var(--primary-color);
+  color: var(--invert-font-color) !important;
+  text-shadow: 0 0 2px;
+}
+.scanlines::before {
+  width: 100%;
+  height: 5px;
+  z-index: 2147483649;
+  background: rgba(255, 203, 0, 0.3);
+  opacity: .75;
+  -webkit-animation: 6s linear infinite scanline;
+  animation: 6s linear infinite scanline;
+}
+.scanlines::before {
+  display: block;
+  pointer-events: none;
+  content: "";
+  position: absolute;
+}
+@-webkit-keyframes scanline {
+0% {
+  -webkit-transform:translate3d(0,200000%,0);
+  transform:translate3d(0,200000%,0)
+}
+}
+@keyframes scanline {
+0% {
+  -webkit-transform:translate3d(0,200000%,0);
+  transform:translate3d(0,200000%,0)
+}
+}
+@-webkit-keyframes scanlines {
+0% {
+  background-position:0 50%
+}
+}
+@keyframes scanlines {
+0% {
+  background-position:0 50%
+}
+}
+table, p, h1, h2, h3, h4, h5, h6, li, textarea, button.btn, hr, #video, input, img {
+  display: none; /* Initially hide all paragraphs */
+}
+textarea {
+  background-color: transparent;
+  box-shadow: 0 0 3px var(--font-color);
+}
+code::before, code::after {
+  display: none;
+}
+code {
+  background: transparent;
+}
+hr {
+  margin: calc(var(--global-space) * 1.5)0
+}
+
+/* CSS for making an image blink erratically */
+@keyframes erraticBlink {
+  0%, 100% {
+    opacity: 1;
+  }
+  1% {
+    opacity: 0.2;
+  }
+  2% {
+    opacity: 1;
+  }
+  15% {
+    opacity: 0.9;
+  }
+  20% {
+    opacity: 1;
+  }
+  25% {
+    opacity: 1;
+  }
+  35% {
+    opacity: 1;
+  }
+  45% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 1;
+  }
+  55% {
+    opacity: 1;
+  }
+  60% {
+    opacity: 1;
+  }
+  70% {
+    opacity: 0.96;
+  }
+  80% {
+    opacity: 1;
+  }
+  85% {
+    opacity: 1;
+  }
+  90% {
+    opacity: 1;
+  }
+}
+
+span[contenteditable] {
+  background-color: var(--primary-color);
+  color: var(--invert-font-color);
+  text-shadow: 0 0 2px;
+  padding: 0.2em;
+  border-radius: 0.2em;
+}
+
+span[contenteditable]:focus {
+  outline: none;
+  border: none;
+}
+
+/* Usage Example */
+/* <img src="example.jpg" class="blinking-image" alt="Erratic Blinking Image"> */
+</style>
+</head>
+<body class="scanlines">
+<div id="container">
+<div style="max-width: var(--page-width);">
+<!-- Navbar -->
+<nav>
+  <h1>
+    <strong>KPI</strong> · Reach Further
+  </h1>
+  <p>
+    <a href="/dashboard.html">Home</a>
+    <a href="/assignments.html">Assignments</a>
+    <a href="/notices.html">Notices</a>
+    <a href="/teamlink.html">Team Link</a>
+    <a href="/directory.html">Directory</a>
+    <a href="/data.html">Data Drops</a>
+    <a href="/budget.html">Budget</a>
+    <a href="/stocks.html">Stocks</a>
+  </p>
+  &nbsp;
+</nav>
+
+<main>
+
+  <section>
+    <h1>Founders</h1>
+
+    <p>
+      We remember our founders who never knew when to stop dreaming.
+    </p>
+
+    <p>&nbsp;</p>
+    <p>Bart Geurten</p>
+    <p>Joseph Cahill-Lane</p>
+    <p>Paul Szyska</p>
+    <p>&nbsp;</p>
+    <p>Russell Butson</p>
+    <p>Nathan Hollows</p>
+    <p>Janic Gorman</p>
+    <p>&nbsp;</p>
+    <!-- <p>And others to put in here later</p> -->
+    <!-- <p>&nbsp;</p> -->
+    <p>
+      <em>May cryosleep delay death, but never ambition.</em>
+    </p>
+
+  </section>
+</main>
+
+<section>
+  <p class="">&nbsp;</p>
+  <p class="terminal-prompt">END.</p>
+</section>
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+    const elements = document.querySelectorAll("p, h1, h2, h3, h4, h5, h6, table, li, textarea, button, hr, #video, img, input, a.btn, .message");
+    let delay = 0;
+
+    async function processElements() {
+        for (const el of elements) {
+            if (el.tagName === "TABLE") {
+                el.style.display = "table"; 
+                await processRows(el);
+            } else if (el.classList.contains("message")) {
+                el.style.display = "flex"; 
+            } else {
+                el.style.display = "block"; 
+            el.classList.add("terminal-prompt"); // Add a class for fade-in (if desired)
+            }
+            await new Promise((resolve) => {
+                setTimeout(() => {
+                    if (el.classList.contains("loading")) {
+                        simulateLoading(el).then(resolve); // Wait for loading animation to complete
+                    } else {
+                        resolve(); // Proceed immediately for non-loading elements
+                    }
+                }, delay);
+
+                delay = Math.floor(Math.random() * 300); // Random delay between 0 and 300ms
+            });
+            el.classList.remove("terminal-prompt"); // Add a class for fade-in (if desired)
+        }
+        // Add terminal prompt to the last element
+        elements[elements.length - 1].classList.add("terminal-prompt");
+    }
+
+
+    async function processRows(table, delayRange = [00, 500]) {
+        const rows = table.querySelectorAll("tr");
+        let delay = Math.random() * (delayRange[1] - delayRange[0]) + delayRange[0];
+        for (const row of rows) {
+            row.style.visibility = "hidden";
+        }
+        for (const row of rows) {
+            row.style.visibility = "visible";
+            await new Promise((resolve) => {
+                setTimeout(resolve, delay);
+            });
+            delay = Math.random() * (delayRange[1] - delayRange[0]) + delayRange[0];
+        }
+    }
+
+    function simulateLoading(element) {
+        return new Promise((resolve) => {
+            element.style.display = "block"; // Initially make the element visible
+            let loadingText = element.textContent;
+            let dotCount = 0;
+            const maxDots = 7; // Max number of dots to append
+            const loadingInterval = setInterval(() => {
+                dotCount = (dotCount + 1) % (maxDots + 1); // Cycle dot count
+                element.textContent = loadingText + " " + ".".repeat(dotCount);
+            }, 500); // Update dots every 500ms
+
+            const stopAfter = Math.random() * 3000 + 2000; // Random time between 2 and 5 seconds
+            setTimeout(() => {
+                clearInterval(loadingInterval); // Stop adding dots
+                element.style.display = "none"; // Hide the element
+                resolve(); // Notify that loading is complete
+            }, stopAfter);
+        });
+    }
+
+    processElements();
+});
+</script>
+
+</div>
+</body>
+</html>
+

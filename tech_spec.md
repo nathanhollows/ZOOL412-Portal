@@ -132,7 +132,6 @@ The following user stories follow the fictional context of the project, where st
    - As a **lecturer**, I want to view and respond to student messages via an internal mail system so that communication remains centralised.
    - As a **lecturer**, I want team threads to be organised in a forum-like style to manage conversations efficiently.
 
-\clearpage
 ### **Back-End**
 
 1. **User Authentication**

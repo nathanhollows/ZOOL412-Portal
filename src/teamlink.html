@@ -1,0 +1,57 @@
+<!-- include:layouts/terminal_header.html -->
+<h1 class="text-xl font-bold">TeamLink Communication Protocol</h1>
+
+<div class="message">
+  <div class="sender">TEAMLINK</div> 
+  <span>
+    Welcome to TeamLink, the secure communication platform for KPI employees. Please note that all communications are monitored and logged. Please ensure that all communications are professional and appropriate.
+  </span>
+</div>
+
+<div class="message">
+  <div class="sender">BART</div>
+  <span>
+    Hi Team, I'm having trouble with the new software update. Can someone help me out?
+  </span>
+</div>
+
+<div class="message">
+  <div class="sender">SARAH</div>
+  <span>
+    Hi Bart, I can help you with that. Let's meet at the break room at 3pm.
+  </span>
+</div>
+
+<hr>
+
+<div class="message" style="align-items: center">
+  <div class="sender">REPLY</div>
+  <span contenteditable="true" style="width: 100%"></span>
+</div>
+&nbsp;
+
+<style>
+.message {
+  display: none;
+}
+.message .sender {
+  display: ruby;
+  min-width: 16ch;
+  max-width: 16ch;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  line-break: unset;
+  padding-right: 1em;
+}
+.message span::before {
+  content: "> ";
+}
+.message .sender::before {
+  content: '[';
+}
+.message .sender::after {
+  content: ']';
+}
+</style>
+
+<!-- include:layouts/terminal_footer.html -->

@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KPI</title>
+    <link rel="stylesheet" href="https://unpkg.com/terminal.css@0.7.4/dist/terminal.min.css" />
+    <style>
+:root {
+  --global-font-size: 15px;
+  --global-line-height: 0.4em;
+  --global-space: 10px;
+  --font-stack: Menlo, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono, Bitstream Vera Sans Mono, Courier New, monospace, serif;
+  --mono-font-stack: Menlo, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono, Bitstream Vera Sans Mono, Courier New, monospace, serif;
+  --background-color: #7d6310;
+  --page-width: 60em;
+  --font-color: #ffc100;
+  --invert-font-color: #222225;
+  --primary-color: #f0bf25;
+  --secondary-color: #f0bf25;
+  --tertiary-color: #04d9ff;
+  --error-color: #ff3c74;
+  --progress-bar-background: #3f3f44;
+  --progress-bar-fill: #62c4ff;
+  --code-bg-color: #3f3f44;
+  --input-style: solid;
+  --display-h1-decoration: none;
+}
+
+* {
+  font-size: var(--global-font-size);
+  font-color: var(--font-color);
+}
+
+h1, h2 {
+  margin: 0 0 var(--global-line-height);
+  padding: 0;
+  overflow: visible;
+  position: relative;
+  line-height: 1.4em;
+}
+
+a:not(.btn) {
+  text-decoration: underline;
+}
+
+p {
+  margin-left: 1em; /* Indent paragraphs */
+  position: relative; /* Enable pseudo-element positioning */
+}
+
+/* Add the '>' prefix using CSS pseudo-elements */
+p::before {
+    content: "> ";
+    position: absolute;
+    left: -1em; /* Adjust spacing for the '>' */
+}
+body {
+  background-image: radial-gradient(var(--background-color), black 120%);
+  overflow: hidden;
+  width: 100%;
+  height: 100svh;
+  margin: 0;
+  font: 1.3rem Inconsolata, monospace;
+  text-shadow: 0 0 5px #C8C8C8;
+  font-color: var(--font-color);
+}
+body::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: repeating-linear-gradient(0deg, rgba(0, 0, 0, 0.15), rgba(0, 0, 0, 0.15) 1px, transparent 1px, transparent 2px);
+  pointer-events: none;
+}
+
+#container {
+  height: 100%;
+  overflow: auto;
+  padding: 2rem;
+}
+
+::selection {
+  background: var(--primary-color);
+  text-shadow: none;
+}
+
+pre {
+  margin: 0;
+}
+
+table{
+  margin: 0 auto;
+  margin-top: var(--global-space);
+  margin-bottom: var(--global-space);
+}
+table td, table tr, table th {
+  line-height: 1em;
+  padding: 0.5em;
+}
+table th {
+  background: rgba(255,255,255,0.95);
+  color: var(--invert-font-color);
+}
+tr:hover td {
+  background-color: rgba(255,255,255,0.95);
+  color: var(--invert-font-color) !important;
+}
+.scanlines::before {
+  width: 100%;
+  height: 5px;
+  z-index: 2147483649;
+  background: rgba(0, 183, 255, 0.3);
+  opacity: .75;
+  -webkit-animation: 6s linear infinite scanline;
+  animation: 6s linear infinite scanline;
+}
+.scanlines::before {
+  display: block;
+  pointer-events: none;
+  content: "";
+  position: absolute;
+}
+@-webkit-keyframes scanline {
+0% {
+  -webkit-transform:translate3d(0,200000%,0);
+  transform:translate3d(0,200000%,0)
+}
+}
+@keyframes scanline {
+0% {
+  -webkit-transform:translate3d(0,200000%,0);
+  transform:translate3d(0,200000%,0)
+}
+}
+@-webkit-keyframes scanlines {
+0% {
+  background-position:0 50%
+}
+}
+@keyframes scanlines {
+0% {
+  background-position:0 50%
+}
+}
+table, p, h1, h2, h3, h4, h5, h6, li, textarea, button.btn, a.btn, hr, #video, input {
+  display: none; /* Initially hide all paragraphs */
+}
+textarea {
+  background-color: transparent;
+  box-shadow: 0 0 3px var(--font-color);
+}
+</style>
+</head>
+<body class="scanlines">
+<div id="container">
+<div style="max-width: var(--page-width);">
+<!-- Navbar -->

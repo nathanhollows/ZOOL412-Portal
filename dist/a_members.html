@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KPI</title>
+    <link href="/style.css" rel="stylesheet">
+  </head>
+  <body class="flex min-h-svh" data-theme="wireframe">
+
+    <aside class="h-screen w-72 top-0 overflow-y-auto py-6 px-4 bg-base-200">
+      <a class="btn btn-ghost font-normal">
+        KPI Employee Management
+      </a>
+      <div class="dropdown dropdown-end w-full">
+        <div tabindex="0" role="button" class="btn m-1 w-full">Ψ-Nestor</div>
+        <ul tabindex="0" class="dropdown-content menu bg-base-100 rounded-box z-[1] w-52 p-2 shadow">
+          <li><a>Ψ-Nestor</a></li>
+          <li><a>Θ-Andromeda</a></li>
+          <li><a>Λ-Perseus</a></li>
+          <li><a>Ξ-Cygnus</a></li>
+        </ul>
+      </div>
+      <ul class="menu px-0">
+        <li class="menu-title">Analytics</li>
+        <li>
+          <a href="/a_dashboard.html">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-gauge w-5 h-5"><path d="m12 14 4-4"/><path d="M3.34 19a10 10 0 1 1 17.32 0"/></svg>
+            Dashboard
+          </a>
+        </li>
+        <li class="menu-title">Content</li>
+        <li>
+          <a>
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-file w-5 h-5"><path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z"/><path d="M14 2v4a2 2 0 0 0 2 2h4"/></svg>
+            Assignments
+            <span class="indicator-item badge badge-xs badge-info">New</span>
+          </a>
+        </li>
+        <li>
+          <a href="a_budget.html">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-wallet"><path d="M19 7V4a1 1 0 0 0-1-1H5a2 2 0 0 0 0 4h15a1 1 0 0 1 1 1v4h-3a2 2 0 0 0 0 4h3a1 1 0 0 0 1-1v-2a1 1 0 0 0-1-1"/><path d="M3 5v14a2 2 0 0 0 2 2h15a1 1 0 0 0 1-1v-4"/></svg>
+            Budget
+          </a>
+        </li>
+        <li>
+          <a>
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-japanese-yen"><path d="M12 9.5V21m0-11.5L6 3m6 6.5L18 3"/><path d="M6 15h12"/><path d="M6 11h12"/></svg>
+            Stock values
+          </a>
+        </li>
+
+        <li class="menu-title">Team Management</li>
+        <li>
+          <a href="a_members.html">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-users"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+            Members and Roles
+          </a>
+        </li>
+      </ul>
+    </aside>
+
+<main class="container mx-auto p-4">
+
+  <div class="mb-6">
+    <h1 class="text-xl font-bold">Team members</h1>
+  </div>
+
+  <div class="overflow-x-auto">
+    <table class="table">
+      <!-- head -->
+      <thead>
+        <tr>
+          <th>
+            <label>
+              <input type="checkbox" class="checkbox" />
+            </label>
+          </th>
+          <th>Name</th>
+          <th>Job</th>
+          <th>Favorite Color</th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>
+        <!-- row 1 -->
+        <tr>
+          <th>
+            <label>
+              <input type="checkbox" class="checkbox" />
+            </label>
+          </th>
+          <td>
+            <div class="flex items-center gap-3">
+              <div class="avatar">
+                <div class="mask mask-squircle h-12 w-12">
+                  <img
+                    src="https://img.daisyui.com/images/profile/demo/2@94.webp"
+                    alt="Avatar Tailwind CSS Component" />
+                </div>
+              </div>
+              <div>
+                <div class="font-bold">Hart Hagerty</div>
+              </div>
+            </div>
+          </td>
+          <td>
+            Team Leader
+            <br />
+            <span class="badge badge-ghost badge-sm">Previously Data Analyst</span>
+          </td>
+          <td>Purple</td>
+          <th>
+            <button class="btn btn-ghost btn-xs">details</button>
+          </th>
+        </tr>
+        <!-- row 2 -->
+        <tr>
+          <th>
+            <label>
+              <input type="checkbox" class="checkbox" />
+            </label>
+          </th>
+          <td>
+            <div class="flex items-center gap-3">
+              <div class="avatar">
+                <div class="mask mask-squircle h-12 w-12">
+                  <img
+                    src="https://img.daisyui.com/images/profile/demo/3@94.webp"
+                    alt="Avatar Tailwind CSS Component" />
+                </div>
+              </div>
+              <div>
+                <div class="font-bold">Brice Swyre</div>
+              </div>
+            </div>
+          </td>
+          <td>
+            Data Analyst
+            <br />
+            <span class="badge badge-ghost badge-sm">Previously Journalist</span>
+          </td>
+          <td>Red</td>
+          <th>
+            <button class="btn btn-ghost btn-xs">details</button>
+          </th>
+        </tr>
+        <!-- row 3 -->
+        <tr>
+          <th>
+            <label>
+              <input type="checkbox" class="checkbox" />
+            </label>
+          </th>
+          <td>
+            <div class="flex items-center gap-3">
+              <div class="avatar">
+                <div class="mask mask-squircle h-12 w-12">
+                  <img
+                    src="https://img.daisyui.com/images/profile/demo/4@94.webp"
+                    alt="Avatar Tailwind CSS Component" />
+                </div>
+              </div>
+              <div>
+                <div class="font-bold">Marjy Ferencz</div>
+              </div>
+            </div>
+          </td>
+          <td>
+            Journalist
+            <br />
+            <span class="badge badge-ghost badge-sm">Previously Ethicist</span>
+          </td>
+          <td>Crimson</td>
+          <th>
+            <button class="btn btn-ghost btn-xs">details</button>
+          </th>
+        </tr>
+        <!-- row 4 -->
+        <tr>
+          <th>
+            <label>
+              <input type="checkbox" class="checkbox" />
+            </label>
+          </th>
+          <td>
+            <div class="flex items-center gap-3">
+              <div class="avatar">
+                <div class="mask mask-squircle h-12 w-12">
+                  <img
+                    src="https://img.daisyui.com/images/profile/demo/5@94.webp"
+                    alt="Avatar Tailwind CSS Component" />
+                </div>
+              </div>
+              <div>
+                <div class="font-bold">Yancy Tear</div>
+              </div>
+            </div>
+          </td>
+          <td>
+            Ethicist
+            <br />
+            <span class="badge badge-ghost badge-sm">Previously Team Leader</span>
+          </td>
+          <td>Indigo</td>
+          <th>
+            <button class="btn btn-ghost btn-xs">details</button>
+          </th>
+        </tr>
+      </tbody>
+      <!-- foot -->
+      <tfoot>
+        <tr>
+          <th></th>
+          <th>Name</th>
+          <th>Job</th>
+          <th>Favorite Color</th>
+          <th></th>
+        </tr>
+      </tfoot>
+    </table>
+  </div>
+</main>
+  </body>
+</html>
+

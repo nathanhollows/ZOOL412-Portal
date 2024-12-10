@@ -1,0 +1,122 @@
+<!-- include:layouts/admin_header.html -->
+<main class="container mx-auto p-4">
+  <!-- Dashboard Header -->
+  <div class="mb-6">
+    <h1 class="text-xl font-bold">Dashboard</h1>
+    <p>Quick overview of your recent activity</p>
+  </div>
+
+  <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+    <!-- New Messages -->
+    <div class="card border rounded-none">
+      <div class="card-body">
+        <h2 class="card-title">New Messages</h2>
+        <p>You have <strong>3</strong> unread messages</p>
+        <a href="/mail.html" class="btn btn-primary btn-sm">View Messages</a>
+      </div>
+    </div>
+
+    <!-- Outstanding Assignments -->
+    <div class="card border rounded-none">
+      <div class="card-body">
+        <h2 class="card-title">Outstanding Assignments</h2>
+        <p><strong>1</strong> assignment is due this week</p>
+        <a href="/assignments.html" class="btn btn-warning btn-sm">Expert Opinion Required</a>
+      </div>
+    </div>
+
+    <!-- Feedback -->
+    <div class="card border rounded-none">
+      <div class="card-body">
+        <h2 class="card-title">Feedback Provided</h2>
+        <p>You are up-to-date with feedback</p>
+        <a href="/feedback.html" class="btn btn-sm">Read Feedback</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Stock Chart Section -->
+  <div class="mt-6 card border rounded-none">
+    <div class="card-body">
+      <h2 class="card-title">
+        Mandatory Awareness of Stock Market Developments
+      </h2>
+      <div class="h-96 rounded-lg flex items-center justify-center">
+        <canvas id="spaceStockChart" class="w-full h-full"></canvas>
+      </div>
+    </div>
+  </div>
+
+<!-- Add Chart.js -->
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<script>
+  const ctx = document.getElementById('spaceStockChart').getContext('2d');
+  const spaceStockChart = new Chart(ctx, {
+    type: 'line',
+    data: {
+      labels: [
+        '00:00', '01:00', '02:00', '03:00', '04:00',
+        '05:00', '06:00', '07:00', '08:00', '09:00',
+        '10:00', '11:00', '12:00', '13:00', '14:00',
+        '15:00', '16:00', '17:00', '18:00', '19:00',
+        '20:00', '21:00', '22:00', '23:00', '24:00', '25:00'
+      ],
+      datasets: [{
+        label: 'XNSE Stock Price (¥)',
+        data: [
+          106.8, 103.1, 108.2, 104.5, 102.3, 107.9, 117.8, 115.4, 113.1, 110.3, 112.7, 121.7, 128.4, 127.6, 125.5, 122.1, 118.6, 119.5, 124.3, 130.2, 132.5, 134.7, 135.6, 137.9, 139.2, 140.5
+        ],
+        borderColor: '#000000',
+        backgroundColor: '#000000',
+        tension: 0.4,
+      },{
+        label: 'APE Stock Price (¥)',
+        data: [
+          106.8, 103.1, 108.2, 104.5, 102.3, 103.9, 119.8, 117.4, 111.1, 111.3, 111.7, 119.7, 126.4, 127.6, 123.5, 121.1, 116.6, 122.5, 127.3, 134.2, 129.5, 132.7, 136.6, 138.9, 139.9, 139.5
+        ],
+        borderColor: '#298636',
+        backgroundColor: '#298636',
+        tension: 0.4,
+      }]
+    },
+    options: {
+      responsive: true,
+      maintainAspectRatio: false,
+      plugins: {
+        legend: {
+          position: 'top',
+        },
+        title: {
+          display: true,
+          text: 'Stock Performance'
+        }
+      },
+      scales: {
+        x: {
+          grid: {
+            display: false,
+          },
+          title: {
+            display: true,
+            text: 'Date',
+            color: '#000000'
+          }
+        },
+        y: {
+          grid: {
+            drawBorder: false,
+          },
+          title: {
+            display: true,
+            text: 'XNSE Stock Price (¥)',
+            color: '#000000'
+          },
+          beginAtZero: false
+        }
+      }
+    }
+  });
+</script>
+</main>
+<!-- include:layouts/admin_footer.html -->
